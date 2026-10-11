@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Deeqo Qaliif 💜</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080510;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+nav {
+    padding: 20px;
+    background: #12091e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid #9b39d5;
+}
+
+nav h2 {
+    color: #d58aff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+}
+
+nav a:hover {
+    color: #ff69d4;
+}
+
+.hero {
+    min-height: 85vh;
+    padding: 50px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+    background: radial-gradient(circle, #35104f, #080510 70%);
+}
+
+.hero h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    line-height: 1.3;
+}
+
+.hero h1 span {
+    display: block;
+    color: #d58aff;
+}
+
+.hero p {
+    max-width: 550px;
+    margin: 20px auto;
+    line-height: 1.8;
+    color: #e4d3f0;
+}
+
+.cake {
+    font-size: clamp(100px, 22vw, 180px);
+    animation: float 3s ease-in-out infinite;
+}
+
+button {
+    padding: 13px 23px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(90deg, #8e2de2, #d641b5);
+    cursor: pointer;
+    font-size: 16px;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #b84cff;
+}
+
+section {
+    padding: 60px 7%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.heading h2 {
+    color: #d58aff;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.heading p {
+    color: #d5c3e3;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #140b20;
+    border: 1px solid #672b8b;
+    border-radius: 18px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #ff69d4;
+}
+
+.card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #e0a8ff;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #e0d4e9;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.friendship {
+    max-width: 850px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #672b8b;
+    border-radius: 20px;
+    background: #140b20;
+    line-height: 2;
+    color: #e0d4e9;
+}
+
+.friendship h3 {
+    color: #e0a8ff;
+    margin-bottom: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    background: linear-gradient(135deg, #41105d, #140b20);
+    border: 1px solid #672b8b;
+    border-radius: 18px;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.gallery-item .emoji {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.gallery-item p {
+    color: #f0dfff;
+    line-height: 1.7;
+}
+
+.final {
+    text-align: center;
+    margin: 20px 7% 50px;
+    padding: 35px 20px;
+    background: #251035;
+    border: 1px solid #9b39d5;
+    border-radius: 20px;
+}
+
+.final h2 {
+    color: #e0a8ff;
+    margin-bottom: 15px;
+}
+
+.final p {
+    line-height: 1.8;
+    color: #e0d4e9;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #12091e;
+    color: #d58aff;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    z-index: 10;
+    pointer-events: none;
+    animation: rise 5s linear forwards;
+}
+
+#toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 100px);
+    background: #281039;
+    border: 1px solid #d58aff;
+    padding: 15px 20px;
+    border-radius: 25px;
+    transition: 0.4s;
+    z-index: 20;
+    text-align: center;
+    width: max-content;
+    max-width: 90%;
+}
+
+#toast.show {
+    transform: translate(-50%, 0);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    100% {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .cards, .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 45px 6%;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>♡ Deeqo Qaliif</h2>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#ducoyin">Dhalasho</a>
+        <a href="#saaxiibtinimo">Saaxiibtinimo</a>
+        <a href="#sawirro">Xusuus</a>
+    </div>
+</nav>
+
+<header class="hero" id="home">
+    <div>
+        <h1>
+            Happy Birthday
+            <span>Deeqo Qaliif 💜</span>
+        </h1>
+
+        <p>
+            Maanta waa maalin gaar ah oo farxad leh.
+            Waxaan kuu rajaynayaa cimri dheer, caafimaad,
+            guul iyo nasiib wanaagsan. Dhalasho wacan! 🎉
+        </p>
+
+        <button onclick="celebrate()">
+            🎂 Dhalasho Wacan
+        </button>
+
+        <button onclick="document.getElementById('ducoyin').scrollIntoView()">
+            🤲 Akhri Ducada
+        </button>
+    </div>
+
+    <div class="cake">🎂</div>
+</header>
+
+<section id="ducoyin">
+    <div class="heading">
+        <h2>Hambalyada Dhalashada 🎉</h2>
+        <p>Saddex fariimood oo gaar ah oo qalbi ka yimid.</p>
+    </div>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="icon">🎂</div>
+            <h3>Dhalasho Wacan ❤️</h3>
+            <p>
+                Dhalasho wacan ruuxa qaaliga ah! 🥳🎂
+                Aad iyo aad baan ugu faraxsanahay in ay
+                markii ugu horraysay tahay aniga oo qayb
+                ka ah dhalashadaada oo kula dabaaldegaya
+                maanta oo kale. Alle ha kuu barakeeyo
+                cimrigaaga, caafimaadkaaga iyo noloshaada,
+                wax kasta oo aad hiigsanaycana ha kuu
+                fududeeyo. Sanadkan cusub ha kuu noqdo
+                mid khayr iyo guul badan. Mar walba
+                faraxsanow! ❤️🫶🏼🎉
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="icon">🫶🏼</div>
+            <h3>Happy Birthday Wlshey 🎉</h3>
+            <p>
+                Happy Birthday wlshey!
+                Ilaahay cimrigaaga ha dheereeyo,
+                caafimaad iyo farxad ha ku siiyo,
+                riyadaadana ha kuu rumoobo.
+                Allah ha kaa dhigo qof adduun iyo
+                aakhiroba liibaana, murugo iyo dhibna
+                ha kaa fogeeyo. Sanadkan cusubna kheyr
+                iyo barako ha kuugu bilowdo.
+                Dhalasho farxad leh, baayo 🫶🏼❤️🎉
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="icon">💜</div>
+            <h3>Duco iyo Farxad ✨</h3>
+            <p>
+                Happy Birthday!
+                Ilaahay ha kuu barakeeyo cimrigaaga,
+                caafimaadkaaga iyo noloshaada.
+                Rabbigu ha kuu fududeeyo wax kasta
+                oo aad hiigsanayso, farxad aan dhammaan
+                iyo guulna ha ku siiyo. Sanadkan cusub
+                ha kuu noqdo mid kheyr, nasiib iyo
+                ducooyin kuu rumoobaan. Mar walba
+                faraxsanow, Ilaahayna ha ku xafido.
+                ❤️🫶🏼🎉
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<section id="saaxiibtinimo">
+    <div class="heading">
+        <h2>Saaxiibtinimo & Qadarin 💞</h2>
+    </div>
+
+    <div class="friendship">
+        <h3>Dear Deeqo Qaliif 🌸</h3>
+
+        <p>
+            “Nolosha waa qurux, laakiin dadka wanaagsan
+            ayaa quruxdeeda sii kordhiya.” 💜
+            <br><br>
+            Waxaan kuu rajaynayaa saaxiibo daacad ah,
+            farxad iyo xusuuso qurux badan.
+            Ilaahay ha kuu badiyo dadka wanaagga kuu
+            raba, hana kuu fududeeyo dhammaan
+            riyooyinkaaga. Maanta dhoolla-caddee,
+            naftaada qiimee, ogowna inaad mudan tahay
+            wax kasta oo wanaagsan. 💗🎁
+        </p>
+    </div>
+</section>
+
+<section id="sawirro">
+    <div class="heading">
+        <h2>Ubaxyo & Xusuus 🌹</h2>
+        <p>Farxad iyo wanaag adiga kuu gaar ah.</p>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <div class="emoji">🌹</div>
+            <p>Ubaxyo iyo farxad adiga kuu gaar ah</p>
+        </div>
+
+        <div class="gallery-item">
+            <div class="emoji">💐</div>
+            <p>Waxaan kuu rajaynayaa wanaag aan dhammaan</p>
+        </div>
+
+        <div class="gallery-item">
+            <div class="emoji">🌅</div>
+            <p>Bilow cusub, rajo cusub, guulo cusub</p>
+        </div>
+    </div>
+</section>
+
+<div class="final">
+    <h2>Happy Birthday, Deeqo Qaliif! 👑</h2>
+
+    <p>
+        May Allah bless your new age, protect your
+        beautiful heart, grant you happiness in this
+        life and the Hereafter, and make all your
+        beautiful dreams come true. Aamiin. 🤲💜
+    </p>
+
+    <button onclick="celebrate()">
+        🎉 Celebrate Again
+    </button>
+</div>
+
+<footer>
+    ♡ Deeqo Qaliif | Happy Birthday 💜
+</footer>
+
+<div id="toast">Dhalasho wacan, Deeqo Qaliif! 💜🎂</div>
+
+<script>
+function floatingHeart() {
+    const heart = document.createElement("span");
+
+    heart.className = "heart";
+    heart.textContent = ["♥", "♡", "💜", "💗", "✦"][
+        Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.fontSize = (16 + Math.random() * 24) + "px";
+    heart.style.color = "#ff69d4";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function () {
+        heart.remove();
+    }, 8500);
+}
+
+setInterval(floatingHeart, 700);
+
+let toastTimer;
+
+function celebrate() {
+    for (let i = 0; i < 20; i++) {
+        setTimeout(floatingHeart, i * 100);
+    }
+
+    const toast = document.getElementById("toast");
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(function () {
+        toast.classList.remove("show");
+    }, 3000);
+}
+</script>
+
+</body>
+</html>
